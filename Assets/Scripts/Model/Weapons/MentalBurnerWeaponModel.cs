@@ -2,7 +2,7 @@
 {
     public sealed class MentalBurnerWeaponModel : BaseWeaponObject
     {
-
+        #region Methods
         protected override void Awake()
         {
             base.Awake();
@@ -26,5 +26,6 @@
             _isReady = false;
             _timeRemaining.AddTimeRemaining();
         }
+        #endregion
     }
 }

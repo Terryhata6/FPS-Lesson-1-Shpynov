@@ -4,6 +4,7 @@ namespace Game
 {
     public class Bullet : BaseAmmuObject
     {
+        #region Methods     
         private void OnCollisionEnter(Collision collision)
         { 
             var setDamage = collision.gameObject.GetComponent<ICollision>();
@@ -13,6 +14,7 @@ namespace Game
             }
             DestroyAmmunition();
         }
+        #endregion
     }
 }
 

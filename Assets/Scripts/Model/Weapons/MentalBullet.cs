@@ -4,6 +4,7 @@ namespace Game
 {
     public class MentalBullet : BaseAmmuObject
     {
+        #region Methods
         //bool _scaling;  TODO Исправить контроллер снарядов
         protected override void Awake()
         {
@@ -24,6 +25,7 @@ namespace Game
             //_scaling = false;
             DestroyAmmunition();
         }
+        #endregion
     }
 }
 

@@ -4,6 +4,7 @@ namespace Game
 {
     public abstract class BaseAmmuObject : BaseObjectScene
     {
+        #region BaseAmmuObject
         [SerializeField] 
         private float _timeToDestruct = 10.0f;
         [SerializeField] 
@@ -20,7 +21,8 @@ namespace Game
         protected DamageCapsule _projectileDamage; 
         public AmmunitionType Type = AmmunitionType.Bullet;
         public Transform _source;
-        
+        #endregion
+        #region Methods
         protected override void Awake()
         {
             base.Awake();
@@ -28,11 +30,7 @@ namespace Game
             _projectileDamage.MentalDamageValue = _mentalDamage;
             _projectileDamage.ColdDamageValue = _coldDamage;
             _projectileDamage.BulletEffect = 0;
-        }
-
-        private void Start()
-        {
-            Destroy(gameObject, _timeToDestruct);            
+            Destroy(gameObject, _timeToDestruct);
         }
 
         public void AddForce(Vector3 dir)
@@ -50,5 +48,6 @@ namespace Game
             Destroy(gameObject, destoyTime);
             //_timeRemaining.RemoveTimeRemaining();            
         }
+        #endregion
     }
 }

@@ -4,10 +4,11 @@ namespace Game
 {
     public sealed class BulletController : BaseController, IExecute
     {
+        #region BulletController
         private BaseAmmuObject _bullet;
         private Vector3 _scale;
         private int _scaleCounter = 0;
-        
+        #endregion
         #region IExecute        
         public void Execute()
         {            

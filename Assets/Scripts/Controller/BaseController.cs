@@ -4,13 +4,17 @@ namespace Game
 {
     public abstract class BaseController
     {
+        #region BaseController
         protected UiInterface UiInterface;
+        
+        
         protected BaseController()
         {
             UiInterface = new UiInterface();
         }
         public bool IsActive { get; private set; }
-
+        #endregion
+        #region Methods
         public virtual void On()
         {
             On(null);
@@ -37,6 +41,7 @@ namespace Game
                 Off();
             }
         }
+        #endregion
     }
 }
     

@@ -4,6 +4,7 @@ namespace Game
 {
     public sealed class M4A1Model : BaseWeaponObject
     {
+        #region Methods
         public override void Fire()
         {
             if (!_isReady) return;
@@ -15,5 +16,6 @@ namespace Game
             _isReady = false;
             _timeRemaining.AddTimeRemaining();
         }
+        #endregion
     }
 }

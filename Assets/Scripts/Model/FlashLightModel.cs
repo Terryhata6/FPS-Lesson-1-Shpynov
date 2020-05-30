@@ -5,6 +5,7 @@ namespace Game
 {
     public sealed class FlashLightModel : BaseObjectScene
     {
+        #region FlashLightModel
         [SerializeField] private float _speed = 11;
         [SerializeField] private float _batteryChargeMax = 10;
         [SerializeField] private float _batteryChargeSpeedModifier = 4;
@@ -13,8 +14,8 @@ namespace Game
         private Transform _goFollow;
         private Vector3 _vecOffset;
         public float BatteryChargeCurrent { get; private set; }
-        
-
+        #endregion
+        #region Methods
         protected override void Awake()
         {
             base.Awake();
@@ -85,8 +86,7 @@ namespace Game
                 return true;
             }            
              return false;
-        } 
-
-        
+        }
+        #endregion
     }
 }

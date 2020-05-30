@@ -5,7 +5,7 @@ namespace Game
 {
     public abstract class BaseWeaponObject : BaseObjectScene
     {
-        
+        #region BaseWeaponObject
         public BaseAmmuObject Ammunition;
         public Clip Clip; //Запас патронов и объем обоймы
         
@@ -26,7 +26,8 @@ namespace Game
         protected bool _isReady = true;
         protected ITimeRemaining _timeRemaining;
         protected ITimeRemaining _reloadTimeRemaining;
-        
+        #endregion
+        #region Methods
         private void Start()
         {
             _weaponOwner = ServiceLocatorMonoBehaviour.GetService<CharacterController>().transform;
@@ -98,6 +99,6 @@ namespace Game
             if (!_unlimitedCharge)
                 Clip.TotalAmmunition += value;
         }
-        
+        #endregion
     }
 }

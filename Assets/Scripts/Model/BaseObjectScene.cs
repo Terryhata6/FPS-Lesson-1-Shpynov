@@ -4,13 +4,14 @@ namespace Game
 {
     public abstract class BaseObjectScene : MonoBehaviour
     {
+        #region BaseObjectScene
         private int _layer;
         private Color _color;
         private bool _isVisible;
         [HideInInspector] public Rigidbody Rigidbody;
         [HideInInspector] public Transform Transform;
         [HideInInspector] public Vector3 BasePosition;
-
+        #endregion
         #region UnityFunction
 
         protected virtual void Awake()
@@ -21,7 +22,6 @@ namespace Game
         }
 
         #endregion
-
         #region Property
 
         /// <summary>
@@ -76,7 +76,6 @@ namespace Game
         }
 
         #endregion
-
         #region PrivateFunction
         /// <summary>
         /// Выставляет слой себе и всем вложенным объектам в независимости от уровня вложенности
@@ -114,7 +113,7 @@ namespace Game
             }
         }
         #endregion
-
+        #region RigidBody and Collider
         /// <summary>
         /// Выключает физику у объекта и его детей
         /// </summary>
@@ -169,5 +168,6 @@ namespace Game
                 component.enabled = value;
             }
         }
+        #endregion
     }
 }

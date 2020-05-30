@@ -30,27 +30,7 @@ namespace Game
             private set => _healthPoint = value;
         }
         #endregion
-        
-        #region Methods
-        protected override void Awake()
-        {
-            base.Awake();
-            _trashPosition = new Vector3(-42.0f, -42.0f, -42.0f);
-            _canRespawn = true;
-            _respawnTimeRemaining = new TimeRemaining(() => Spawn(), _customRespawnTime);
-            Refresh();            
-        }
-
-
-        public void Refresh()
-        {
-            _healthPoint = _baseHealthPoint;
-            _physicalResistance = _basePhysicalResistance;
-            _coldResistance = _baseColdResistance;
-            _mentalResistance = _baseMentalResistance;
-            _isMentalBurning = 0;
-        }
-
+        #region ICollision
         public void CollisionEnter(InfoCollision info)
         {
             if (_isDead) return;
@@ -66,21 +46,45 @@ namespace Game
                     {
                         GetEffect(info.Damage.BulletEffect);
                     }
-                }                
+                }
                 if (Hp <= 0)
                 {
                     BecomeDead();
                 }
             }
         }
+        #endregion
+        #region ISelectObj
         /// <summary>
         /// Возвращает строку с информацией о выбранном объекте
         /// </summary>
         /// <returns></returns>
         public string GetMessage()
-        {            
-            return $"{gameObject.name} - {Hp:0}";//
+        {
+            return $"{gameObject.name} - {Hp:0}";
         }
+        #endregion
+        #region Methods
+        protected override void Awake()
+        {
+            base.Awake();
+            _trashPosition = new Vector3(-42.0f, -42.0f, -42.0f);
+            _canRespawn = true;
+            _respawnTimeRemaining = new TimeRemaining(() => Spawn(), _customRespawnTime);
+            Refresh();            
+        }
+
+        public void Refresh()
+        {
+            _healthPoint = _baseHealthPoint;
+            _physicalResistance = _basePhysicalResistance;
+            _coldResistance = _baseColdResistance;
+            _mentalResistance = _baseMentalResistance;
+            _isMentalBurning = 0;
+        }
+        
+        
+
         /// <summary>
         /// 
         /// </summary>
@@ -147,5 +151,6 @@ namespace Game
             _isDead = true;
         }
         #endregion
+        
     }
 }

@@ -5,6 +5,7 @@ namespace Game
 {
     public sealed class PlayerStats : BaseObjectScene, ICollision
     {
+        #region PlayerStats
         [SerializeField]
         [Range(0.0f, 1.0f)]
         private float _coldResistance = 0.0f;
@@ -21,14 +22,8 @@ namespace Game
         private bool _isDead = false;
         private float _damaged;
         public float _healthPoint;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            _baseHealthPoint = 300.0f;
-            _healthPoint = _baseHealthPoint;
-        }
-
+        #endregion
+        #region ICollision
         public void CollisionEnter(InfoCollision info)
         {
             if (_isDead) return;
@@ -53,6 +48,15 @@ namespace Game
                 }                
             }
         }
+        #endregion
+        #region Methods
+        protected override void Awake()
+        {
+            base.Awake();
+            _baseHealthPoint = 300.0f;
+            _healthPoint = _baseHealthPoint;
+        }
+
         public void GetEffect(BulletEffects effect)
         {
             ///Получил эффект
@@ -77,6 +81,7 @@ namespace Game
         {
             Debug.Log($"Игрок получил урон:{damage}, источник: {info.Source.name}");
         }
+        #endregion
     }
 }
 

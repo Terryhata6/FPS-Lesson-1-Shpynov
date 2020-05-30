@@ -5,9 +5,13 @@ namespace Game
 {
     public static class ServiceLocator
     {
+        #region ServiceLocator
+
         private static readonly Dictionary<Type, object> _servicecontainer =
              new Dictionary<Type, object>();
 
+        #endregion
+        #region Methods
         public static void SetService<T>(T value) where T : class
         {
             var typeValue = value.GetType();
@@ -21,5 +25,6 @@ namespace Game
         {
             return (T)_servicecontainer[typeof(T)];
         }
-    }   
+        #endregion
+    }
 }

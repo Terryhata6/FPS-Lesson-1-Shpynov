@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mine.cs" />
+    <Compile Include="Assets\Models\Mine.cs" />
     <Compile Include="Assets\Scripts\Controller\BaseController.cs" />
     <Compile Include="Assets\Scripts\Controller\BulletController.cs" />
     <Compile Include="Assets\Scripts\Controller\Controllers.cs" />
@@ -91,6 +91,8 @@
     <Compile Include="Assets\Scripts\Enums\LevelCellsType.cs" />
     <Compile Include="Assets\Scripts\Enums\MouseButton.cs" />
     <Compile Include="Assets\Scripts\Helper\Cell.cs" />
+    <Compile Include="Assets\Scripts\Helper\Clip.cs" />
+    <Compile Include="Assets\Scripts\Helper\DamageCapsule.cs" />
     <Compile Include="Assets\Scripts\Helper\Debug.cs" />
     <Compile Include="Assets\Scripts\Helper\InfoCollision.cs" />
     <Compile Include="Assets\Scripts\Helper\NavMeshRebaker.cs" />
@@ -117,8 +119,6 @@
     <Compile Include="Assets\Scripts\Model\Weapons\BaseAmmuObject.cs" />
     <Compile Include="Assets\Scripts\Model\Weapons\BaseWeaponObject.cs" />
     <Compile Include="Assets\Scripts\Model\Weapons\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Model\Weapons\Clip.cs" />
-    <Compile Include="Assets\Scripts\Model\Weapons\DamageCapsule.cs" />
     <Compile Include="Assets\Scripts\Model\Weapons\M4A1Model.cs" />
     <Compile Include="Assets\Scripts\Model\Weapons\MentalBullet.cs" />
     <Compile Include="Assets\Scripts\Model\Weapons\MentalBurnerWeaponModel.cs" />

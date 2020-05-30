@@ -6,6 +6,7 @@ namespace Game
 {
     public sealed class SmartEnemyObject : BaseEnemyObject
     {
+        #region SmartEnemyObject
         private NavMeshAgent _agent;
         public float _activeDis = 20.0f;
         private float _currentDis = 999.0f;
@@ -36,7 +37,8 @@ namespace Game
         public Transform PlayerTransform { get; set; }
         public Vision _vision;
         private bool _meleeAttackIsReady = true;
-
+        #endregion
+        #region Methods
         protected override void Awake()
         {
             base.Awake();      
@@ -61,7 +63,10 @@ namespace Game
             _inviseOnDeathTimeRemaining.AddTimeRemaining();
             SetCondition(Conditions.Dead);
         }
-
+        /// <summary>
+        /// Actions when was damaged
+        /// </summary>
+        /// <param name="info"></param>
         protected override void WasDamaged(InfoCollision info)
         {
             base.WasDamaged(info);
@@ -264,6 +269,7 @@ namespace Game
                 Transform.position = _trashPosition;
             }            
         }
+        #endregion
     }
 }
 

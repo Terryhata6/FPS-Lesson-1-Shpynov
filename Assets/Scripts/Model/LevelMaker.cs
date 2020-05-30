@@ -7,6 +7,7 @@ namespace Game
 {
     public sealed class LevelMaker : MonoBehaviour
     {
+        #region LevelMaker
         [SerializeField]
         public GameObject _room;
         [SerializeField]
@@ -21,8 +22,8 @@ namespace Game
         [SerializeField]
         [Range(6.0f, 30.0f)]
         public int _height = 12;
-
-        
+        #endregion
+        #region Methods
         public void CreateBridge(int x, int z, CellTypes bridgeType)
         {
             if (bridgeType == CellTypes.BridgeLR)
@@ -48,5 +49,6 @@ namespace Game
             tempEnemy.PlayerTransform = ServiceLocatorMonoBehaviour.GetService<CharacterController>().transform;
             ServiceLocator.Resolve<SmartEnemyesController>().AddBotToList(tempEnemy);
         }
+        #endregion
     }
 }

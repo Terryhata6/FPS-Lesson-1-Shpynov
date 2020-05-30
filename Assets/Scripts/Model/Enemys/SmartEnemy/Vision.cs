@@ -5,8 +5,10 @@ namespace Game
 
     public sealed class Vision
     {
-        public float ActiveAng = 35;
-
+        #region Vision
+        public float _activeAng = 35;
+        #endregion
+        #region Methods
         public bool VisionM(Transform player, Transform target, float ActiveDis, out float SqrCurrentDis)
         {
             return Distance(player, target, ActiveDis, out SqrCurrentDis) && Angle(player, target) && !CheckBloked(player, target);
@@ -21,7 +23,7 @@ namespace Game
         private bool Angle(Transform player, Transform target)
         {
             var angle = Vector3.Angle(target.position - player.position, player.forward);
-            return angle <= ActiveAng;
+            return angle <= _activeAng;
         }
 
         private bool Distance(Transform player, Transform target, float ActiveDis, out float SqrCurrentDis)
@@ -29,6 +31,7 @@ namespace Game
             SqrCurrentDis = (player.position - target.position).sqrMagnitude;
             return SqrCurrentDis <= ActiveDis * ActiveDis;
         }
+        #endregion
     }
 
 }
