@@ -39,7 +39,7 @@ namespace Game
                     {
                         GetEffect(info.Damage.BulletEffect);
                     }
-                    _damaged = tempHp;
+                    _damaged = tempHp - _healthPoint;
                     WasDamaged(info, _damaged);
                 }
                 if (_healthPoint <= 0)
